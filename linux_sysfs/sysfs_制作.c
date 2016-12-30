@@ -1,5 +1,7 @@
 ```
- 1. 三个重要脚本文件
+注： 脚本文件的内容是在命令行执行的
+
+1. 三个重要脚本文件
  	1. /etc/inittab 
 		#系统最先执行,结束后才继续其它动作		
 		::sysinit:/etc/init.d/rcS    		
@@ -32,7 +34,7 @@
 			
 2. 让自己的程序开机启动:
 	直接在/etc/init.d/rcS添加一条：
-          /bin/hello_arm
+          /bin/hello_arm            #文件路径
 ```
 
 
