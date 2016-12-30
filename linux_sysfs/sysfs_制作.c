@@ -29,6 +29,10 @@
 		tmpfs         /tmp          tmpfs       defaults        0        0
 		sysfs         /sys          sysfs       defaults        0        0
 		tmpfs         /dev          tmpfs       defaults        0        0
+			
+2. 让自己的程序开机启动:
+	直接在/etc/init.d/rcS添加一条：
+          /bin/hello_arm
 ```
 
 
