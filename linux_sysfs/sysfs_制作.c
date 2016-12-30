@@ -150,13 +150,17 @@ File systems --->
           
 #!/bin/sh
 echo ">>>>>>>> in /etc/init.d/rcS<<<<<<<<<<<<<<<<<"
+#执行 etc/fstab 里面的挂载命令
 /bin/mount -a
 echo /sbin/mdev > /proc/sys/kernel/hotplug
+
+#挂载/sys/mdev 目录下的设备节点
 /sbin/mdev -s
 -----------------------------------------------------------
 mdev是用于自动创建设备节点    
-    为rcS添加可执行权限：
-       $ chmod   a+x  init.d/rcS
+
+为rcS添加可执行权限：
+	$ chmod   a+x  init.d/rcS
 ```
 
 ```
@@ -176,7 +180,7 @@ export PATH  LD_LIBRARY_PATH
 ```
 14、 设备文件创建
 
-根文件系统中有一个设备节点是必须的，在dev下创建console节点
+根文件系统中有一个设备节点是必须的，在dev下手动创建console节点
 $ mknod   dev/console  c  5  1
 以上的步骤就完成了linux根目录所需要的所有文件，可以直接使用
 
