@@ -1,35 +1,35 @@
 ```
- 1. Ô´ÂëÏÂÔØ
- 2. ½âÑ¹Ô´Âë
- 3.  ½øÈëÔ´ÂëÄ¿Â¼£¬ĞŞ¸ÄMakefile  
- 4. ÅäÖÃÔ´Âë
- 5. ±àÒë
- 6. °²×° 
- 7. ½øÈë°²×°Ä¿Â¼ÏÂ
- 8. ´´½¨ÆäËûĞèÒªµÄÄ¿Â¼
- 9. Ìí¼Ó¶¯Ì¬¿â
- 10. Ìí¼ÓÏµÍ³Æô¶¯ÎÄ¼ş
- 11. ÔÚ_install/etcÏÂÌí¼ÓÎÄ¼şfstab
- 12. ÔÚ_install/etcÏÂ´´½¨init.dÄ¿Â¼£¬²¢ÔÚinit.dÏÂ´´½¨rcSÎÄ¼ş
- 13. ÔÚ_install/etcÏÂÌí¼ÓprofileÎÄ¼ş
- 14. Éè±¸ÎÄ¼ş´´½¨
+ 1. æºç ä¸‹è½½
+ 2. è§£å‹æºç 
+ 3.  è¿›å…¥æºç ç›®å½•ï¼Œä¿®æ”¹Makefile  
+ 4. é…ç½®æºç 
+ 5. ç¼–è¯‘
+ 6. å®‰è£… 
+ 7. è¿›å…¥å®‰è£…ç›®å½•ä¸‹
+ 8. åˆ›å»ºå…¶ä»–éœ€è¦çš„ç›®å½•
+ 9. æ·»åŠ åŠ¨æ€åº“
+ 10. æ·»åŠ ç³»ç»Ÿå¯åŠ¨æ–‡ä»¶
+ 11. åœ¨_install/etcä¸‹æ·»åŠ æ–‡ä»¶fstab
+ 12. åœ¨_install/etcä¸‹åˆ›å»ºinit.dç›®å½•ï¼Œå¹¶åœ¨init.dä¸‹åˆ›å»ºrcSæ–‡ä»¶
+ 13. åœ¨_install/etcä¸‹æ·»åŠ profileæ–‡ä»¶
+ 14. è®¾å¤‡æ–‡ä»¶åˆ›å»º
  15. ```
 
 ```
-1¡¢  Ô´ÂëÏÂÔØ
+1ã€  æºç ä¸‹è½½
 
-ÎÒÃÇÑ¡ÔñµÄ°æ±¾ÊÇbusybox-1.17.3.tar.bz2ÏÂÔØÂ·¾¶Îª£º
+æˆ‘ä»¬é€‰æ‹©çš„ç‰ˆæœ¬æ˜¯busybox-1.17.3.tar.bz2ä¸‹è½½è·¯å¾„ä¸ºï¼š
 http://busybox.net/downloads/
 ```
 
 ```
-2¡¢  ½âÑ¹Ô´Âë
+2ã€  è§£å‹æºç 
 
 $ tar  xvf  busybox-1.17.3.tar.bz2
 ```
 
 ```
-3¡¢  ½øÈëÔ´ÂëÄ¿Â¼£¬ĞŞ¸ÄMakefile
+3ã€  è¿›å…¥æºç ç›®å½•ï¼Œä¿®æ”¹Makefile
 
 $ cd  busybox-1.17.3
 $ vim Makefile
@@ -39,7 +39,7 @@ $ vim Makefile
 ```
 
 ```
-4¡¢  ÅäÖÃÔ´Âë
+4ã€  é…ç½®æºç 
 
 $ make menuconfig
 Busybox Settings ---> 
@@ -57,22 +57,22 @@ Busybox Settings --->
 ```
 
 ```
-5¡¢  ±àÒë
+5ã€  ç¼–è¯‘
 
 $ make
 
 ```
 
 ```
-6¡¢  °²×° 
+6ã€  å®‰è£… 
 
 $ make  install 
-  busyboxÄ¬ÈÏ°²×°Â·¾¶ÎªÔ´ÂëÄ¿Â¼ÏÂµÄ_install
+  busyboxé»˜è®¤å®‰è£…è·¯å¾„ä¸ºæºç ç›®å½•ä¸‹çš„_install
 
 ```
 
 ```
-7¡¢  ½øÈë°²×°Ä¿Â¼ÏÂ
+7ã€  è¿›å…¥å®‰è£…ç›®å½•ä¸‹
 
 $ cd  _install
 $ ls
@@ -80,26 +80,26 @@ bin  linuxrc  sbin
 ```
 
 ```
-8¡¢  ´´½¨ÆäËûĞèÒªµÄÄ¿Â¼
+8ã€  åˆ›å»ºå…¶ä»–éœ€è¦çš„ç›®å½•
 
 $ mkdir  dev  etc  mnt  proc  var  tmp  sys  root  lib home usr
 ```
 
 ```
-9¡¢  Ìí¼Ó¶¯Ì¬¿â
+9ã€  æ·»åŠ åŠ¨æ€åº“
 
-?  ½«¹¤¾ßÁ´ÖĞµÄ¿â¿½±´µ½_installÄ¿Â¼ÏÂµÄlibÄ¿Â¼
-$cp -raf /usr/local/toolchain-4.5.1-farsight/arm-none-linux-gnueabi/lib/*  lib*/
-?  É¾³ı¿âÎÄ¼şÖĞµÄ·ûºÅ±í£¬Ò²½ĞÊİÉí
-$ rm -rf lib/*.a
-$ arm-none-linux-gnueabi-strip  lib/*
-
-```
+?  å°†å·¥å…·é“¾ä¸­çš„åº“æ‹·è´åˆ°_installç›®å½•ä¸‹çš„libç›®å½•
+$cp -raf /usr/local/toolchain-4.5.1-farsight/arm-none-linux-gnueabi/lib/*  lib/   	*/
+?  åˆ é™¤åº“æ–‡ä»¶ä¸­çš„ç¬¦å·è¡¨ï¼Œä¹Ÿå«ç˜¦èº«
+$ rm -rf lib/*.a   									*/
+$ arm-none-linux-gnueabi-strip  lib/*                     				*/
 
 ```
-10¡¢ Ìí¼ÓÏµÍ³Æô¶¯ÎÄ¼ş
 
-ÔÚ_install/etcÏÂÌí¼ÓÎÄ¼şinittab£¬ÎÄ¼şÄÚÈİÈçÏÂ£º
+```
+10ã€ æ·»åŠ ç³»ç»Ÿå¯åŠ¨æ–‡ä»¶
+
+åœ¨_install/etcä¸‹æ·»åŠ æ–‡ä»¶inittabï¼Œæ–‡ä»¶å†…å®¹å¦‚ä¸‹ï¼š
 
 ::sysinit:/etc/init.d/rcS
 ::askfirst:-/bin/ash
@@ -108,22 +108,22 @@ $ arm-none-linux-gnueabi-strip  lib/*
 ::shutdown:/bin/umount -a -r
 ::restart:/sbin/init
 
-¸ñÊ½ËµÃ÷:
-<id>:<runlevels>:<action>:<process> : ÔÚÊ²Ã´Ê±¼äÆô¶¯Ê²Ã´½ø³Ì
+æ ¼å¼è¯´æ˜:
+<id>:<runlevels>:<action>:<process> : åœ¨ä»€ä¹ˆæ—¶é—´å¯åŠ¨ä»€ä¹ˆè¿›ç¨‹
 
-id:		   ½ø³ÌËùÊ¹ÓÃµÄÖÕ¶ËÃû
-runlevels: ²»ÓÃÌîĞ´
+id:		   è¿›ç¨‹æ‰€ä½¿ç”¨çš„ç»ˆç«¯å
+runlevels: ä¸ç”¨å¡«å†™
 <action>:  Valid actions include: sysinit, respawn, askfirst, wait, once, restart, ctrlaltdel, and shutdown.
 
-sysinit£º  ÏµÍ³³õÊ¼»¯µÄÊ±ºò,·ÅÔÚ×îÇ°Ãæ
-respawn¡¢askfirstÊÇÒ»ÑùµÄ£º Èç¹ûprocessÒâÍâÖÕÖ¹À²,ÏµÍ³»á½²ÆäÖØÆô
-askfirst£º »áÓĞÌáÊ¾Please press Enter to activate this console
-wait£º     ¸Ã½ø³ÌÒ»¶¨ÒªÖ´ĞĞÍê,²ÅÄÜÖ´ĞĞÏÂÒ»¸ö
-once£º     ½ø³ÌÈç¹ûÒâÍâÖÕÖ¹,ÄÇÃ´²»»áÖØÆô
+sysinitï¼š  ç³»ç»Ÿåˆå§‹åŒ–çš„æ—¶å€™,æ”¾åœ¨æœ€å‰é¢
+respawnã€askfirstæ˜¯ä¸€æ ·çš„ï¼š å¦‚æœprocessæ„å¤–ç»ˆæ­¢å•¦,ç³»ç»Ÿä¼šè®²å…¶é‡å¯
+askfirstï¼š ä¼šæœ‰æç¤ºPlease press Enter to activate this console
+waitï¼š     è¯¥è¿›ç¨‹ä¸€å®šè¦æ‰§è¡Œå®Œ,æ‰èƒ½æ‰§è¡Œä¸‹ä¸€ä¸ª
+onceï¼š     è¿›ç¨‹å¦‚æœæ„å¤–ç»ˆæ­¢,é‚£ä¹ˆä¸ä¼šé‡å¯
 ```
 
 ```
-11£¬ÔÚ_install/etcÏÂÌí¼ÓÎÄ¼şfstab£¬ÎÄ¼şÄÚÈİÈçÏÂ£º
+11ï¼Œåœ¨_install/etcä¸‹æ·»åŠ æ–‡ä»¶fstabï¼Œæ–‡ä»¶å†…å®¹å¦‚ä¸‹ï¼š
 
 #device     mount-point     type        options         dump     fsck order
 proc          /proc         proc        defaults        0        0
@@ -131,22 +131,22 @@ tmpfs         /tmp          tmpfs       defaults        0        0
 sysfs         /sys          sysfs       defaults        0        0
 tmpfs         /dev          tmpfs       defaults        0        0
 
-ÕâÀïÎÒÃÇ¹ÒÔØµÄÎÄ¼şÏµÍ³ÓĞÈı¸öproc¡¢sysfsºÍtmpfs¡£ÔÚÄÚºËÖĞprocºÍsysfsÄ¬ÈÏ¶¼Ö§³Ö£¬¶øtmpfsÊÇÃ»ÓĞÖ§³ÖµÄ£¬ÎÒÃÇĞèÒªÌí¼ÓtmpfsµÄÖ§³Ö
+è¿™é‡Œæˆ‘ä»¬æŒ‚è½½çš„æ–‡ä»¶ç³»ç»Ÿæœ‰ä¸‰ä¸ªprocã€sysfså’Œtmpfsã€‚åœ¨å†…æ ¸ä¸­procå’Œsysfsé»˜è®¤éƒ½æ”¯æŒï¼Œè€Œtmpfsæ˜¯æ²¡æœ‰æ”¯æŒçš„ï¼Œæˆ‘ä»¬éœ€è¦æ·»åŠ tmpfsçš„æ”¯æŒ
 
-ĞŞ¸ÄÄÚºËÅäÖÃ£º
+ä¿®æ”¹å†…æ ¸é…ç½®ï¼š
 File systems --->
        Pseudo filesystems ---> 
              [*] /proc file system support (NEW) 
               [*] sysfs file system support (NEW) 
               [*] Virtual memory file system support (former shm fs) 
               [*]   Tmpfs POSIX Access Control Lists 
-ÖØĞÂ±àÒëÄÚºË
+é‡æ–°ç¼–è¯‘å†…æ ¸
 	$ make zImage -j2
 
 ```
 
 ```
-12£¬ ÔÚ_install/etcÏÂ´´½¨init.dÄ¿Â¼£¬²¢ÔÚinit.dÏÂ´´½¨rcSÎÄ¼ş£¬rcSÎÄ¼şÄÚÈİÎª£º
+12ï¼Œ åœ¨_install/etcä¸‹åˆ›å»ºinit.dç›®å½•ï¼Œå¹¶åœ¨init.dä¸‹åˆ›å»ºrcSæ–‡ä»¶ï¼ŒrcSæ–‡ä»¶å†…å®¹ä¸ºï¼š
           
 #!/bin/sh
 echo ">>>>>>>> in /etc/init.d/rcS<<<<<<<<<<<<<<<<<"
@@ -154,13 +154,13 @@ echo ">>>>>>>> in /etc/init.d/rcS<<<<<<<<<<<<<<<<<"
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 /sbin/mdev -s
 -----------------------------------------------------------
-mdevÊÇÓÃÓÚ×Ô¶¯´´½¨Éè±¸½Úµã    
-    ÎªrcSÌí¼Ó¿ÉÖ´ĞĞÈ¨ÏŞ£º
+mdevæ˜¯ç”¨äºè‡ªåŠ¨åˆ›å»ºè®¾å¤‡èŠ‚ç‚¹    
+    ä¸ºrcSæ·»åŠ å¯æ‰§è¡Œæƒé™ï¼š
        $ chmod   a+x  init.d/rcS
 ```
 
 ```
-13£¬ÔÚ_install/etcÏÂÌí¼ÓprofileÎÄ¼ş£¬ÎÄ¼şÄÚÈİÎª£º
+13ï¼Œåœ¨_install/etcä¸‹æ·»åŠ profileæ–‡ä»¶ï¼Œæ–‡ä»¶å†…å®¹ä¸ºï¼š
 
 #!/bin/sh
 export HOSTNAME=farsight
@@ -174,47 +174,47 @@ export PATH  LD_LIBRARY_PATH
 ```
 
 ```
-14¡¢ Éè±¸ÎÄ¼ş´´½¨
+14ã€ è®¾å¤‡æ–‡ä»¶åˆ›å»º
 
-¸ùÎÄ¼şÏµÍ³ÖĞÓĞÒ»¸öÉè±¸½ÚµãÊÇ±ØĞëµÄ£¬ÔÚdevÏÂ´´½¨console½Úµã
+æ ¹æ–‡ä»¶ç³»ç»Ÿä¸­æœ‰ä¸€ä¸ªè®¾å¤‡èŠ‚ç‚¹æ˜¯å¿…é¡»çš„ï¼Œåœ¨devä¸‹åˆ›å»ºconsoleèŠ‚ç‚¹
 $ mknod   dev/console  c  5  1
-ÒÔÉÏµÄ²½Öè¾ÍÍê³ÉÁËlinux¸ùÄ¿Â¼ËùĞèÒªµÄËùÓĞÎÄ¼ş£¬¿ÉÒÔÖ±½ÓÊ¹ÓÃ
+ä»¥ä¸Šçš„æ­¥éª¤å°±å®Œæˆäº†linuxæ ¹ç›®å½•æ‰€éœ€è¦çš„æ‰€æœ‰æ–‡ä»¶ï¼Œå¯ä»¥ç›´æ¥ä½¿ç”¨
 
 $ sudo  cp   -raf  _install  /opt/myrootfs
 ```
 
-####NFS²âÊÔ
+####NFSæµ‹è¯•
 ```
-1. ½«×öºÃµÄ¸ùÄ¿Â¼¸´ÖÆ³É/opt/rootfs(Èç¹ûÄãÒÑ¾­ÓĞÕâ¸öÄ¿Â¼,¾ÍÒª×¢ÒâÀ²)
+1. å°†åšå¥½çš„æ ¹ç›®å½•å¤åˆ¶æˆ/opt/rootfs(å¦‚æœä½ å·²ç»æœ‰è¿™ä¸ªç›®å½•,å°±è¦æ³¨æ„å•¦)
    $ sudo  cp   -raf  _install  /opt/rootfs
-   1.2 ÔÚubuntuÖĞ½«/opt/rootfsÉèÖÃ³ÉnfsÎÄ¼şÏµÍ³
-	   ĞŞ¸ÄubuntuµÄ/etc/exports: ½«/opt/rootfsÉèÖÃ³ÉnfsÎÄ¼şÏµÍ³¸ñÊ½
+   1.2 åœ¨ubuntuä¸­å°†/opt/rootfsè®¾ç½®æˆnfsæ–‡ä»¶ç³»ç»Ÿ
+	   ä¿®æ”¹ubuntuçš„/etc/exports: å°†/opt/rootfsè®¾ç½®æˆnfsæ–‡ä»¶ç³»ç»Ÿæ ¼å¼
 	   /opt/rootfs            *(subtree_check,rw,no_root_squash,async)
 	   
-	   ÖØÆô·şÎñÆ÷£º sudo service nfs-kernel-server restart
-2. ÉèÖÃuboot»·¾³±äÁ¿
+	   é‡å¯æœåŠ¡å™¨ï¼š sudo service nfs-kernel-server restart
+2. è®¾ç½®ubootç¯å¢ƒå˜é‡
    # setenv  bootcmd  tftp  20800000  zImage \;  go  20800000
    # setenv  bootargs  root=nfs  nfsroot=192.168.7.100:/opt/rootfs  init=/linuxrc console=ttySAC0,115200  ip=192.168.7.200
    # saveenv
 
 ```
 
-###Èç¹ûÏë¿ª»ú¾ÍÔËĞĞÒ»¸ö×Ô¼º¿ÉÖ´ĞĞ³ÌĞò£¬¿ÉÒÔ×öÈçÏÂ´¦Àí
+###å¦‚æœæƒ³å¼€æœºå°±è¿è¡Œä¸€ä¸ªè‡ªå·±å¯æ‰§è¡Œç¨‹åºï¼Œå¯ä»¥åšå¦‚ä¸‹å¤„ç†
 ```
-12. ±àÒë³öÒ»¸ö¿ÉÖ´ĞĞ³ÌĞò£¬Ò»¶¨Òª·ÅÔÚbinÄ¿Â¼ÏÂ  /bin/hello_arm
+12. ç¼–è¯‘å‡ºä¸€ä¸ªå¯æ‰§è¡Œç¨‹åºï¼Œä¸€å®šè¦æ”¾åœ¨binç›®å½•ä¸‹  /bin/hello_arm
  
-    /etc/init.d/rcSÖĞÆô¶¯¿ÉÖ´ĞĞ³ÌĞò(hello_arm Îª¿ÉÖ´ĞĞ³ÌĞò)
-	·½·¨1£ºÖ±½ÓÔÚ/etc/init.d/rcSÌí¼ÓÒ»Ìõ£º
+    /etc/init.d/rcSä¸­å¯åŠ¨å¯æ‰§è¡Œç¨‹åº(hello_arm ä¸ºå¯æ‰§è¡Œç¨‹åº)
+	æ–¹æ³•1ï¼šç›´æ¥åœ¨/etc/init.d/rcSæ·»åŠ ä¸€æ¡ï¼š
           /bin/hello_arm
            
-	·½·¨2£º
-		1.ÔÚ/etc Ä¿Â¼ÖĞ´´½¨Ò»¸öÎÄ¼ş¼ĞÎªlocal,È»ºóÔÚlocalÖĞ´´½¨mysrv.sh½Å±¾ÎÄ¼ş¡£
-		2.ÔÚmysrv.sh½Å±¾ÖĞĞ´Èë
+	æ–¹æ³•2ï¼š
+		1.åœ¨/etc ç›®å½•ä¸­åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹ä¸ºlocal,ç„¶ååœ¨localä¸­åˆ›å»ºmysrv.shè„šæœ¬æ–‡ä»¶ã€‚
+		2.åœ¨mysrv.shè„šæœ¬ä¸­å†™å…¥
 			#!/bin/ash
 		    /bin/hello_arm 
-		3.ÔÚ/etc/init.d/rcSÌí¼Ó
+		3.åœ¨/etc/init.d/rcSæ·»åŠ 
 		   /etc/local/mysrv.sh
 
-	ÖØĞÂÆô¶¯¿ª·¢°å
+	é‡æ–°å¯åŠ¨å¼€å‘æ¿
 ```
 
