@@ -1,4 +1,25 @@
 ```
+ 1. 三个重要脚本文件
+ 	1. /etc/inittab 
+		#系统最先执行,结束后才继续其它动作		
+		::sysinit:/etc/init.d/rcS    		
+		#和repsawn（重生） 一样，结束后系统让它再跑起来		
+		::askfirst:-/bin/ash
+		#按下Ctrl+Alt+Del组合键		
+		::ctrlaltdel:/sbin/reboot
+		#系统关机时执行
+		::shutdown:/sbin/swapoff -a
+		::shutdown:/bin/umount -a -r
+		#先重新读取、解析/etc/inittab 文件，再执行restart程序		
+		::restart:/sbin/init
+		
+	2. /etc/ini.d/rcS
+	
+	3. /etc/fstab
+```
+
+
+```
  1. 源码下载
  2. 解压源码
  3.  进入源码目录，修改Makefile  
