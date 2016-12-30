@@ -14,8 +14,21 @@
 		::restart:/sbin/init
 		
 	2. /etc/ini.d/rcS
-	
-	3. /etc/fstab
+		#!/bin/sh
+		echo ">>>>>>>> in /etc/init.d/rcS<<<<<<<<<<<<<<<<<"
+		#执行 etc/fstab 里面的挂载命令
+		/bin/mount -a
+		echo /sbin/mdev > /proc/sys/kernel/hotplug
+
+		#挂载/sys/mdev 目录下的设备节点
+		/sbin/mdev -s
+		
+	3. /etc/fstab   #挂载类型相当 mount -t sysfs(type) sysfs /sys
+		#device     mount-point     type        options         dump     fsck order
+		proc          /proc         proc        defaults        0        0
+		tmpfs         /tmp          tmpfs       defaults        0        0
+		sysfs         /sys          sysfs       defaults        0        0
+		tmpfs         /dev          tmpfs       defaults        0        0
 ```
 
 
